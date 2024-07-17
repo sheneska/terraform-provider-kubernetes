@@ -23,8 +23,6 @@ resource "kubernetes_namespace" "example" {
     name = "my-first-namespace"
   }
 }
-
-// testing from mau
 ```
 
 ## Kubernetes versions
