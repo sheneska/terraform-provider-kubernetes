@@ -3,7 +3,8 @@ name: "Tf Plugin Docs"
 on:
     pull_request:
       paths:
-        - 'docs/**'       
+        - 'docs/**'
+      types: [opened, synchronize, labeled]       
 
     push:
       branches:
@@ -13,6 +14,8 @@ jobs:
     check-docs:
       runs-on: ubuntu-latest
   
+      if: ${{ !contains(github.event.pull_request.labels.*.name, 'pr/no-documentation') }}
+
       steps:
         - name: Checkout repository
           uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
@@ -38,5 +41,4 @@ jobs:
             echo "Documentation is not up to date. Please update documentation & run the command."
             exit 1
           if: failure()
-
 
