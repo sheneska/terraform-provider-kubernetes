@@ -103,7 +103,7 @@ If podSelector is also set, then the NetworkPolicyPeer as a whole selects the po
 If namespaceSelector is also set, then the NetworkPolicyPeer as a whole selects the pods matching podSelector in the Namespaces selected by NamespaceSelector. Otherwise it selects the pods matching podSelector in the policy's own namespace. (see [below for nested schema](#nestedblock--spec--egress--to--pod_selector))
 
 <a id="nestedblock--spec--egress--to--ip_block"></a>
-### Nested Schema for `spec.egress.to.ip_block`
+### Nested Schema for `spec.egress.to.pod_selector`
 
 Optional:
 
@@ -112,15 +112,15 @@ Optional:
 
 
 <a id="nestedblock--spec--egress--to--namespace_selector"></a>
-### Nested Schema for `spec.egress.to.namespace_selector`
+### Nested Schema for `spec.egress.to.pod_selector`
 
 Optional:
 
-- `match_expressions` (Block List) A list of label selector requirements. The requirements are ANDed. (see [below for nested schema](#nestedblock--spec--egress--to--namespace_selector--match_expressions))
+- `match_expressions` (Block List) A list of label selector requirements. The requirements are ANDed. (see [below for nested schema](#nestedblock--spec--egress--to--pod_selector--match_expressions))
 - `match_labels` (Map of String) A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-<a id="nestedblock--spec--egress--to--namespace_selector--match_expressions"></a>
-### Nested Schema for `spec.egress.to.namespace_selector.match_expressions`
+<a id="nestedblock--spec--egress--to--pod_selector--match_expressions"></a>
+### Nested Schema for `spec.egress.to.pod_selector.match_expressions`
 
 Optional:
 
@@ -173,7 +173,7 @@ If podSelector is also set, then the NetworkPolicyPeer as a whole selects the po
 If namespaceSelector is also set, then the NetworkPolicyPeer as a whole selects the pods matching podSelector in the Namespaces selected by NamespaceSelector. Otherwise it selects the pods matching podSelector in the policy's own namespace. (see [below for nested schema](#nestedblock--spec--ingress--from--pod_selector))
 
 <a id="nestedblock--spec--ingress--from--ip_block"></a>
-### Nested Schema for `spec.ingress.from.ip_block`
+### Nested Schema for `spec.ingress.from.pod_selector`
 
 Optional:
 
@@ -182,15 +182,15 @@ Optional:
 
 
 <a id="nestedblock--spec--ingress--from--namespace_selector"></a>
-### Nested Schema for `spec.ingress.from.namespace_selector`
+### Nested Schema for `spec.ingress.from.pod_selector`
 
 Optional:
 
-- `match_expressions` (Block List) A list of label selector requirements. The requirements are ANDed. (see [below for nested schema](#nestedblock--spec--ingress--from--namespace_selector--match_expressions))
+- `match_expressions` (Block List) A list of label selector requirements. The requirements are ANDed. (see [below for nested schema](#nestedblock--spec--ingress--from--pod_selector--match_expressions))
 - `match_labels` (Map of String) A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of `match_expressions`, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
 
-<a id="nestedblock--spec--ingress--from--namespace_selector--match_expressions"></a>
-### Nested Schema for `spec.ingress.from.namespace_selector.match_expressions`
+<a id="nestedblock--spec--ingress--from--pod_selector--match_expressions"></a>
+### Nested Schema for `spec.ingress.from.pod_selector.match_expressions`
 
 Optional:
 
