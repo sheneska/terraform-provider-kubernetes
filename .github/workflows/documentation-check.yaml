@@ -23,10 +23,8 @@ jobs:
           repository: hashicorp/terraform-plugin-docs
           path: tfplugindocs
   
-      - name: Build and install tfplugindocs command
-        run: |
-          cd cmd/tfplugindocs
-          go install
+      - name: Install tfplugindocs command
+        run: go install github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs@latest
 
       - name: Run docs tool
         run: tfplugindocs generate  
